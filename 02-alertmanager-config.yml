@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: alertmanager-config
+  labels:
+    tier: monitoring
+    app: alertmanager
+data:
+  alertmanager.yml: |-
+    global:
+      slack_api_url: https://hooks.slack.com/services/SADASDASDD/1234ASDADFFG/FCsdfdfdIWTjniH5sxbjE2JuU
+
+    route:
+      receiver: 'slack-notifications'
+
+    receivers:
+      - name: 'slack-notifications'
+        slack_configs:
+          - channel: '#smalik-monitoring-alerts'
+            text: 'WAKE UP, something happened! - {{ .CommonAnnotations.description }}'
