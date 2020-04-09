@@ -6,6 +6,7 @@ metadata:
     tier: monitoring
     app: prometheus-rsproxy
 spec:
+  type: LoadBalancer
   selector:
     app: prometheus-rsproxy
   ports:

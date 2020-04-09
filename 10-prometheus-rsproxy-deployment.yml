@@ -20,7 +20,7 @@ spec:
         runAsUser: 5000
       containers:
         - name: prometheus-rsproxy
-          image: micrometermetrics/prometheus-rsocket-proxy:0.10.0
+          image: micrometermetrics/prometheus-rsocket-proxy:0.9.0
           imagePullPolicy: Always
           ports:
             - name: scrape

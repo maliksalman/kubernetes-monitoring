@@ -6,7 +6,7 @@ metadata:
     tier: monitoring
     app: grafana
 spec:
-  clusterIP: None
+  type: LoadBalancer
   selector:
     app: grafana
   ports:
