@@ -37,8 +37,8 @@ data:
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
-          "h": 17,
-          "w": 24,
+          "h": 19,
+          "w": 12,
           "x": 0,
           "y": 0
         },
@@ -125,10 +125,10 @@ data:
         "fill": 1,
         "fillGradient": 0,
         "gridPos": {
-          "h": 17,
-          "w": 24,
-          "x": 0,
-          "y": 17
+          "h": 19,
+          "w": 12,
+          "x": 12,
+          "y": 0
         },
         "hiddenSeries": false,
         "id": 3,
@@ -288,12 +288,12 @@ data:
         ]
       },
       "timezone": "",
-      "title": "Custom Metrics",
+      "title": "App Metrics",
       "uid": "0gfZZ0CZz",
       "variables": {
         "list": []
       },
-      "version": 7
+      "version": 1
     }
   spring-boot.json: |-
     {
