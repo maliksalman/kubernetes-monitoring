@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: grafana
   labels:
@@ -7,7 +7,6 @@ metadata:
     app: grafana
 spec:
   replicas: 1
-  serviceName: grafana
   selector:
     matchLabels:
       app: grafana
@@ -27,16 +26,20 @@ spec:
               containerPort: 3000
               protocol: TCP
           volumeMounts:
-            - name: grafana-data-volume
-              mountPath: /var/lib/grafana
-              readOnly: false
             - name: grafana-config-volume
               mountPath: /etc/grafana/provisioning/datasources/datasource.yaml
               subPath: datasource.yaml
               readOnly: true
             - name: grafana-config-volume
+              mountPath: /etc/grafana/provisioning/dashboards/dashboards.yaml
+              subPath: dashboards.yaml
+              readOnly: true
+            - name: grafana-config-volume
               mountPath: /etc/grafana/grafana.ini
               subPath: grafana.ini
+              readOnly: true
+            - name: grafana-dashboards-volume
+              mountPath: /var/lib/grafana/dashboards
               readOnly: true
           resources:
             requests:
@@ -52,17 +55,10 @@ spec:
             items:
               - key: datasource.yaml
                 path: datasource.yaml
+              - key: dashboards.yaml
+                path: dashboards.yaml
               - key: grafana.ini
                 path: grafana.ini
-  volumeClaimTemplates:
-    - metadata:
-        name: grafana-data-volume
-        labels:
-          tier: monitoring
-          app: grafana
-      spec:
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          requests:
-            storage: 128Mi
+        - name: grafana-dashboards-volume
+          configMap:
+            name: grafana-dashboards

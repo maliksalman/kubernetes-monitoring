@@ -24,3 +24,17 @@ data:
 
     # Role for unauthenticated users, other valid values are `Editor` and `Admin`
     org_role = Viewer
+  dashboards.yaml: |-
+    apiVersion: 1
+    providers:
+      - name: 'prometheus'
+        orgId: 1
+        folder: ''
+        folderUid: ''
+        type: file
+        disableDeletion: true
+        editable: false
+        updateIntervalSeconds: 60
+        allowUiUpdates: false
+        options:
+          path: /var/lib/grafana/dashboards
