@@ -213,12 +213,6 @@ data:
         "list": [
         {
           "allValue": null,
-          "current": {
-            "isNone": true,
-            "selected": false,
-            "text": "None",
-            "value": ""
-          },
           "datasource": "prometheus",
           "definition": "label_values(app_bar_total, env)",
           "hide": 0,
@@ -229,7 +223,7 @@ data:
           "name": "env",
           "options": [],
           "query": "label_values(app_bar_total, env)",
-          "refresh": 1,
+          "refresh": 2,
           "regex": "",
           "skipUrlSync": false,
           "sort": 1,
@@ -241,12 +235,6 @@ data:
         },
         {
           "allValue": null,
-          "current": {
-            "isNone": true,
-            "selected": false,
-            "text": "None",
-            "value": ""
-          },
           "datasource": "prometheus",
           "definition": "label_values(app_bar_total{env=\"$env\"}, app)",
           "hide": 0,
@@ -257,7 +245,7 @@ data:
           "name": "app",
           "options": [],
           "query": "label_values(app_bar_total{env=\"$env\"}, app)",
-          "refresh": 1,
+          "refresh": 2,
           "regex": "",
           "skipUrlSync": false,
           "sort": 1,
@@ -3764,10 +3752,6 @@ data:
         "list": [
         {
           "allValue": null,
-          "current": {
-            "text": "pws",
-            "value": "pws"
-          },
           "datasource": "prometheus",
           "definition": "label_values(jvm_memory_used_bytes, env)",
           "hide": 0,
@@ -3776,15 +3760,9 @@ data:
           "label": "Environment",
           "multi": false,
           "name": "env",
-          "options": [
-          {
-            "selected": true,
-            "text": "pws",
-            "value": "pws"
-          }
-          ],
+          "options": [],
           "query": "label_values(jvm_memory_used_bytes, env)",
-          "refresh": 0,
+          "refresh": 2,
           "regex": "",
           "skipUrlSync": false,
           "sort": 0,
@@ -3796,10 +3774,6 @@ data:
         },
         {
           "allValue": null,
-          "current": {
-            "text": "metrics-demo",
-            "value": "metrics-demo"
-          },
           "datasource": "prometheus",
           "definition": "label_values(jvm_memory_used_bytes{env=\"$env\"}, app)",
           "hide": 0,
@@ -3823,10 +3797,6 @@ data:
         {
           "allFormat": "glob",
           "allValue": null,
-          "current": {
-            "text": "metrics-demo-0",
-            "value": "metrics-demo-0"
-          },
           "datasource": "prometheus",
           "definition": "",
           "hide": 0,
@@ -3851,11 +3821,6 @@ data:
         {
           "allFormat": "glob",
           "allValue": null,
-          "current": {
-            "selected": false,
-            "text": "All",
-            "value": "$__all"
-          },
           "datasource": "prometheus",
           "definition": "",
           "hide": 0,
@@ -3880,11 +3845,6 @@ data:
         {
           "allFormat": "glob",
           "allValue": null,
-          "current": {
-            "selected": false,
-            "text": "All",
-            "value": "$__all"
-          },
           "datasource": "prometheus",
           "definition": "",
           "hide": 0,
