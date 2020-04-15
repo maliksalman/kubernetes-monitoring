@@ -78,3 +78,11 @@ data:
     groups:
       - name: AllRules
         rules:
+          - alert: TooManyNorthBars
+            expr: 'sum by(env,app,region)(rate(app_bar_total{app="metrics-demo",region="north"}[2m])) * 60 > 50'
+            for: 2m
+            annotations:
+              title: 'Too many "north" BARs'
+              description: 'Too many "north" BARs found in {{ $labels.env }}/metrics-demo for more than 2 minute.'
+            labels:
+              severity: 'critical'

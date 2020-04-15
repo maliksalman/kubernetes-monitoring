@@ -33,8 +33,8 @@ data:
         folderUid: ''
         type: file
         disableDeletion: true
-        editable: false
+        editable: true
         updateIntervalSeconds: 60
-        allowUiUpdates: false
+        allowUiUpdates: true
         options:
           path: /var/lib/grafana/dashboards
